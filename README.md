@@ -53,3 +53,37 @@ mvn spring-boot:run
 
 Test the API
 http://localhost:8080/next-tracking-number
+
+**This tracking application is deployed on "Railway.app"**
+**To test the api using postman please find below details.**
+
+**URL**
+https://tracking-service-production-05c2.up.railway.app/next-tracking-number
+
+**Method**
+GET
+
+**Request Body**
+{
+"origin_country_id": "US",
+"destination_country_id": "CA",
+"weight": 10.21,
+"customer_id": "1021",
+"customer_name": "John Doe",
+"created_at": "2025-03-12T03:04:13.439765Z",
+"customer_slug": "john-doe"
+}
+
+**Also deployed tracking api service can be tested using below postman curl.**
+
+curl --location --request GET 'https://tracking-service-production-05c2.up.railway.app/next-tracking-number' \
+--header 'Content-Type: application/json' \
+--data '{
+"origin_country_id": "SV",
+"destination_country_id": "US",
+"weight": 10,
+"customer_id": ",dfjnbgf.ljfghljr.oirjgo",
+"customer_name": "John Doe",
+"created_at": "2018-11-20T19:29:32Z",
+"customer_slug": "invalid-slug"
+}'
